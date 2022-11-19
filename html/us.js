@@ -695,6 +695,12 @@ const 计分 = _=>{
     保存等级们();
 })
 
+添加事件监控(Export,'click',e=>{
+    copy(JSON.stringify(Object.fromEntries(
+        获取所有省元素们().flatMap(元素=>元素.getAttribute('level') ? [[元素.id, 元素.getAttribute('level')]] : [])),
+    null, 2));
+});
+
 const 语言 = 文档.querySelector('#Lang');
 const 设置语言样式 = Set_Lang.style;
 添加事件监控(语言,'click', e=>{
